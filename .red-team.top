@@ -1,0 +1,1 @@
+Highest severity: Main application routes are not server-side protected, leaving core pages outside TideCloak middleware/JWT enforcement.

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VerityChain — Pitch Deck</title>
+<style>
+  :root {
+    --burgundy: #7B113A;
+    --slate: #1E293B;
+    --offwhite: #FDF8F4;
+    --grey: #64748B;
+    --lightGrey: #F1F5F9;
+    --accent: #D4A574;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0F172A; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  .deck { width: 1280px; height: 720px; position: relative; overflow: hidden; background: #fff; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .slide { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 80px; }
+  .slide-title { font-size: 48px; font-weight: 700; color: var(--slate); margin-bottom: 24px; text-align: center; }
+  .slide-subtitle { font-size: 22px; color: var(--grey); text-align: center; max-width: 700px; line-height: 1.5; }
+  .brand-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--burgundy), var(--accent)); }
+  .logo-mark { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+  .logo-icon { width: 52px; height: 52px; background: linear-gradient(135deg, var(--burgundy), #9B1B4A); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+  .logo-text { font-size: 28px; font-weight: 700; color: var(--slate); }
+  .tag { display: inline-block; background: var(--burgundy); color: #fff; padding: 8px 20px; border-radius: 24px; font-size: 14px; font-weight: 600; margin-bottom: 20px; }
+  .card { background: var(--lightGrey); border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 900px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; width: 100%; max-width: 960px; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 42px; font-weight: 700; color: var(--burgundy); }
+  .stat-label { font-size: 14px; color: var(--grey); margin-top: 4px; }
+  .pill { display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .pill-green { background: #ECFDF5; color: #0D9488; }
+  .pill-amber { background: #FEF3C7; color: #92400E; }
+  .screen-mock { background: #fff; border-radius: 10px; border: 2px solid #e2e8f0; overflow: hidden; width: 100%; }
+  .screen-mock-header { background: var(--slate); color: #fff; padding: 8px 12px; font-size: 11px; text-align: center; }
+  .screen-mock-body { padding: 20px; }
+  .mock-form label { display: block; font-size: 11px; font-weight: 600; color: var(--slate); margin-bottom: 3px; }
+  .mock-form input, .mock-form select, .mock-form textarea { width: 100%; padding: 6px 8px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 12px; margin-bottom: 10px; }
+  .mock-btn { display: block; width: 100%; padding: 8px; background: var(--burgundy); color: #fff; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; text-align: center; }
+  .mock-report { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-bottom: 8px; }
+  .mock-report h4 { font-size: 14px; color: var(--slate); margin-bottom: 4px; }
+  .mock-report p { font-size: 12px; color: var(--grey); }
+  .footer-cta { font-size: 16px; color: var(--grey); margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- Slide 1: Title -->
+  <div class="slide" style="background: linear-gradient(135deg, var(--slate) 0%, #0F172A 100%);">
+    <div class="brand-bar"></div>
+    <div class="logo-mark" style="margin-bottom: 40px;">
+      <div class="logo-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span style="font-size: 32px; font-weight: 700; color: #fff;">VerityChain</span>
+    </div>
+    <h1 style="font-size: 52px; color: #fff; text-align: center; margin-bottom: 20px;">The middleman was the vulnerability.</h1>
+    <p style="font-size: 24px; color: rgba(255,255,255,0.65); text-align: center; max-width: 700px; line-height: 1.5;">
+      Field reports sealed at capture. No suppression. No editing. No single point of failure.
+    </p>
+  </div>
+
+  <!-- Slide 2: The Problem -->
+  <div class="slide">
+    <div class="brand-bar"></div>
+    <div class="tag">THE PROBLEM</div>
+    <h2 class="slide-title" style="font-size: 38px;">200 million voters. One point of failure.</h2>
+    <p class="slide-subtitle">
+      Every election observer — OSCE, Carter Center, AU, UN — routes their evidence through a mission chief who can edit, suppress, or spin any observation. The entire chain of custody depends on trusting one person.
+    </p>
+    <div class="grid-3" style="margin-top: 32px;">
+      <div class="stat"><div class="stat-num">200M+</div><div class="stat-label">voters observed annually</div></div>
+      <div class="stat"><div class="stat-num">70+</div><div class="stat-label">countries under observation</div></div>
+      <div class="stat"><div class="stat-num">1</div><div class="stat-label">person decides what's reported</div></div>
+    </div>
+  </div>
+
+  <!-- Slide 3: Solution -->
+  <div class="slide">
+    <div class="brand-bar"></div>
+    <div class="tag" style="background: #0D9488;">THE SOLUTION</div>
+    <h2 class="slide-title" style="font-size: 38px;">We removed the middleman from the evidence chain.</h2>
+    <p class="slide-subtitle">
+      VerityChain encrypts field reports at the moment of capture. The data is sealed to the observer's verified identity — only they can decrypt it. No mission chief can suppress it. No headquarters can alter it. The middleman simply does not exist.
+    </p>
+    <div style="display: flex; gap: 20px; margin-top: 32px; max-width: 800px;">
+      <div class="card" style="flex: 1; text-align: center;">
+        <div style="font-size: 32px; margin-bottom: 8px;">🔐</div>
+        <div style="font-weight: 700; color: var(--slate); margin-bottom: 4px;">Encrypt at Source</div>
+        <div style="font-size: 13px; color: var(--grey);">Before transmission, before storage</div>
+      </div>
+      <div class="card" style="flex: 1; text-align: center;">
+        <div style="font-size: 32px; margin-bottom: 8px;">🛡️</div>
+        <div style="font-weight: 700; color: var(--slate); margin-bottom: 4px;">Identity-Sealed</div>
+        <div style="font-size: 13px; color: var(--grey);">Only the observer can decrypt</div>
+      </div>
+      <div class="card" style="flex: 1; text-align: center;">
+        <div style="font-size: 32px; margin-bottom: 8px;">✅</div>
+        <div style="font-weight: 700; color: var(--slate); margin-bottom: 4px;">Provable Integrity</div>
+        <div style="font-size: 13px; color: var(--grey);">Tampering is cryptographically impossible</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 4: TideCloak primitives -->
+  <div class="slide">
+    <div class="brand-bar"></div>
+    <div class="tag" style="background: var(--accent); color: var(--slate);">WHY TIDECLOAK</div>
+    <h2 class="slide-title" style="font-size: 34px;">Three primitives no one else can combine.</h2>
+    <div class="grid-2" style="margin-top: 24px;">
+      <div class="card">
+        <div style="font-weight: 700; color: var(--burgundy); font-size: 16px; margin-bottom: 6px;">doEncrypt / doDecrypt</div>
+        <div style="font-size: 14px; color: var(--grey); line-height: 1.5;">Seal reports under observer identity with zero key handling. The server physically cannot read stored data.</div>
+      </div>
+      <div class="card">
+        <div style="font-weight: 700; color: var(--burgundy); font-size: 16px; margin-bottom: 6px;">IAMService.doEncrypt</div>
+        <div style="font-size: 14px; color: var(--grey); line-height: 1.5;">M-of-N oversight policy — e.g., any 2 of 3 watchdog orgs must co-sign to unseal. No single rogue official.</div>
+      </div>
+      <div class="card">
+        <div style="font-weight: 700; color: var(--burgundy); font-size: 16px; margin-bottom: 6px;">Forseti Contracts</div>
+        <div style="font-size: 14px; color: var(--grey); line-height: 1.5;">Decryption rules baked into the token itself. No server-side override, no admin backdoor.</div>
+      </div>
+      <div class="card">
+        <div style="font-weight: 700; color: var(--burgundy); font-size: 16px; margin-bottom: 6px;">DPoP-Bound Tokens</div>
+        <div style="font-size: 14px; color: var(--grey); line-height: 1.5;">Session bound to the observer's device. A stolen token is inert — critical for high-stakes field deployments.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 5: App screenshot — Login -->
+  <div class="slide" style="background: var(--offwhite);">
+    <div class="brand-bar"></div>
+    <div style="font-size: 14px; color: var(--grey); margin-bottom: 16px;">THE APP</div>
+    <div style="display: flex; gap: 32px; align-items: flex-start; max-width: 900px;">
+      <div style="flex: 1;">
+        <div class="screen-mock">
+          <div class="screen-mock-header">VerityChain</div>
+          <div class="screen-mock-body" style="text-align: center; padding: 40px 30px;">
+            <div style="display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 24px;">
+              <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #7B113A, #9B1B4A); border-radius: 8px;"></div>
+              <span style="font-weight: 700; font-size: 20px; color: #1E293B;">VerityChain</span>
+            </div>
+            <h3 style="font-size: 24px; color: #1E293B; margin-bottom: 8px;">Witness, sealed forever.</h3>
+            <p style="font-size: 13px; color: #64748B; margin-bottom: 24px;">Every field report is encrypted at the moment of capture.</p>
+            <div class="mock-btn">Continue with Tide</div>
+            <p style="font-size: 10px; color: #64748B; margin-top: 16px;">Your identity verifies you. Your reports cannot be touched.</p>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1;">
+        <div class="screen-mock">
+          <div class="screen-mock-header">Dashboard — Home</div>
+          <div class="screen-mock-body" style="padding: 16px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">
+              <div style="background: #F1F5F9; border-radius: 6px; padding: 12px; text-align: center;"><div style="font-weight: 600; font-size: 11px;">+ Submit Report</div></div>
+              <div style="background: #F1F5F9; border-radius: 6px; padding: 12px; text-align: center;"><div style="font-weight: 600; font-size: 11px;">📋 My Reports</div></div>
+              <div style="background: #F1F5F9; border-radius: 6px; padding: 12px; text-align: center;"><div style="font-weight: 600; font-size: 11px;">⚠ Incidents</div></div>
+              <div style="background: #F1F5F9; border-radius: 6px; padding: 12px; text-align: center;"><div style="font-weight: 600; font-size: 11px;">📊 Mission</div></div>
+            </div>
+            <div style="font-size: 10px; color: #64748B; text-align: center;">OSCE MISSION · KENYA 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 6: App screenshot — Submit + View -->
+  <div class="slide" style="background: var(--offwhite);">
+    <div class="brand-bar"></div>
+    <div style="display: flex; gap: 24px; max-width: 960px;">
+      <div style="flex: 1;">
+        <div class="screen-mock">
+          <div class="screen-mock-header">Submit Field Report</div>
+          <div class="screen-mock-body">
+            <div class="mock-form">
+              <label>Category *</label><select><option>Ballot-box tampering</option></select>
+              <label>Station ID *</label><input value="PS-0421-NRB">
+              <label>Location</label><input value="Kibera, Nairobi">
+              <label>Date & Time *</label><input type="datetime-local" value="2026-06-15T07:42">
+              <label>Description *</label><textarea style="min-height: 50px;">Seals on ballot box #3 found broken before polls opened.</textarea>
+              <label>Witnesses</label><input value="James Ochieng, Mary Wambui">
+              <div class="mock-btn">Seal & Submit Report</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1;">
+        <div class="screen-mock">
+          <div class="screen-mock-header">My Reports</div>
+          <div class="screen-mock-body">
+            <div class="mock-report">
+              <h4>Ballot-box tampering</h4>
+              <p>PS-0421-NRB · Kibera, Nairobi · 2026-06-15T07:42</p>
+              <span class="pill pill-green">SEALED</span>
+            </div>
+            <div class="mock-report">
+              <h4>Voter intimidation</h4>
+              <p>PS-0188-KSM · Kondele, Kisumu · 2026-06-15T09:15</p>
+              <span class="pill pill-green">SEALED</span>
+            </div>
+            <div class="mock-report">
+              <h4>Counting irregularity</h4>
+              <p>PS-0312-MSA · Likoni, Mombasa · 2026-06-15T18:30</p>
+              <span class="pill pill-green">SEALED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 7: Why now -->
+  <div class="slide">
+    <div class="brand-bar"></div>
+    <div class="tag" style="background: var(--slate);">WHY NOW</div>
+    <h2 class="slide-title" style="font-size: 36px;">The world is running out of excuses for trusting middlemen.</h2>
+    <p class="slide-subtitle" style="margin-bottom: 32px;">
+      Cryptographic identity, zero-knowledge encryption, and policy-in-token enforcement are production-ready. The only missing piece was a platform that combined them into a product an election observer could use on a phone. TideCloak is that platform. VerityChain is that product.
+    </p>
+    <div class="grid-2">
+      <div class="card" style="text-align: center;">
+        <div style="font-weight: 700; color: var(--slate); font-size: 16px; margin-bottom: 4px;">For observers</div>
+        <div style="font-size: 14px; color: var(--grey);">Your evidence cannot be silenced. Your name is on the seal.</div>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-weight: 700; color: var(--slate); font-size: 16px; margin-bottom: 4px;">For the world</div>
+        <div style="font-size: 14px; color: var(--grey);">Election integrity that doesn't depend on trusting anyone.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 8: Close -->
+  <div class="slide" style="background: linear-gradient(135deg, var(--slate) 0%, #0F172A 100%);">
+    <div class="brand-bar"></div>
+    <div class="logo-mark" style="margin-bottom: 32px;">
+      <div class="logo-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span style="font-size: 32px; font-weight: 700; color: #fff;">VerityChain</span>
+    </div>
+    <h2 style="font-size: 40px; color: #fff; text-align: center; margin-bottom: 16px;">The chain of custody is the cryptography itself.</h2>
+    <p style="font-size: 20px; color: rgba(255,255,255,0.6); text-align: center; max-width: 600px; line-height: 1.5;">
+      Only TideCloak makes it possible. Because the person who could suppress the evidence was never given the key.
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
